@@ -14,7 +14,7 @@ Essa API foi criada para fornecer dados para um front end que combate o Especism
 
 ## ⏺ Endpoints
 
-### Colocar controle de uma populacao
+### 1- Colocar controle de uma populacao
 
 * **Endpoint:** http://localhost:3000/populacoes/cadastra
 
@@ -22,6 +22,64 @@ Essa API foi criada para fornecer dados para um front end que combate o Especism
 
 * **Formato de dados:** JSON
 
-* Vai receber os dados em método POST para cadastrar um novo Animal na população
+* Vai receber os dados em método POST, no formato de JSON, para cadastrar um novo Animal na população
+
+Exemplo de requisição, entrada e resposta:
 
 ![Exemplo de entrada e resposta:](/assets/images/populacoesPost.png)
+
+### 2- Adicionar Animal
+
+* **Endpoint:** http://localhost:3000/animais/cadastra
+
+* **Método:** POST
+
+* **Formato de dados:** JSON
+
+* Vai receber os dados em método POST, no formato de JSON, para cadastrar um novo Animal na base de dados
+
+Exemplo de requisição, entrada e resposta:
+
+![Exemplo de entrada e resposta:](/assets/images/animaisPost.png)
+
+### 3- Buscar Animais
+
+* **Endpoint:** http://localhost:3000/animais/
+
+* **Método:** GET
+
+* **Formato de dados:** JSON
+
+* Vai receber a requisição em método GET, vai retornar os Animais cadastrados na base de dados no formato de JSON
+
+Exemplo de requisição e resposta:
+
+![Exemplo de entrada e resposta:](/assets/images/animaisGET.png)
+
+### 4- Buscar Animais das Populações
+
+* **Endpoint:** http://localhost:3000/populacoes/
+
+* **Método:** GET
+
+* **Formato de dados:** JSON
+
+* Vai receber a requisição em método GET, vai retornar os Animais das Populaçoes cadastrados na base de dados no formato de JSON
+
+Exemplo de requisição e resposta:
+
+![Exemplo de entrada e resposta:](/assets/images/populacoesGET.png)
+
+### 5- Buscar Locais e Ações
+
+* **Endpoint:** http://localhost:3000/locais/
+
+* **Método:** GET
+
+* **Formato de dados:** JSON
+
+* Vai receber a requisição em método GET, vai retornar os Locais com ações que beneficiam os Animais cadastrados na base de dados no formato de JSON
+
+Exemplo de requisição e resposta:
+
+![Exemplo de entrada e resposta:](/assets/images/locaisGET.png)
