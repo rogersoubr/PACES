@@ -1,0 +1,60 @@
+{
+    "animais": [
+        {
+            "id": "605906fe-4789-4bcf-8c50-ac64a810d975",
+            "nomeA": "Onça-pintada",
+            "classe": "Mamíferos",
+            "familia": "Felídeos",
+            "ambiente": "terrestre",
+            "bioma": "Mata Atlântica",
+            "exemplares": 250,
+            "extincao": true
+        },
+        {
+            "id": "9ef1f304-e284-46d1-9455-449661aa6385",
+            "nomeA": "Tucano-toco",
+            "classe": "Aves",
+            "familia": "Ramphastidae",
+            "ambiente": "terrestre",
+            "bioma": "Cerrado",
+            "exemplares": 500,
+            "extincao": false
+        },
+        {
+            "id": "2c2dddf0-c7b3-4d56-8d00-ce8abe6f4424",
+            "nomeA": "Peixe-boi-marinho",
+            "classe": "Mamíferos",
+            "familia": "Trichechidae",
+            "ambiente": "marinho",
+            "bioma": "Costeiro",
+            "exemplares": 150,
+            "extincao": true
+        }
+    ],
+    "populacoes": [
+        {
+            "id": "bcd0fe4a-91d2-43d2-ad20-7f89baa06869",
+            "nomeA": "Onça-pintada",
+            "nome": "Jaguá",
+            "idade": 12,
+            "endereco": "Reserva do Xingu",
+            "filhos": 3
+        },
+        {
+            "id": "5680d3bd-fac0-4a5e-892c-d18c549201d1",
+            "nomeA": "Tucano-toco",
+            "nome": "Bico-laranja",
+            "idade": 4,
+            "endereco": "Chapada dos Veadeiros",
+            "filhos": 2
+        },
+        {
+            "id": "357ea730-dd87-4a33-919e-a05117859e0f",
+            "nomeA": "Peixe-boi-marinho",
+            "nome": "Marujo",
+            "idade": 20,
+            "endereco": "Parque Nacional Marinho",
+            "filhos": 1
+        }
+    ]
+}
