@@ -70,9 +70,9 @@ Exemplo de requisição e resposta:
 
 ![Exemplo de entrada e resposta:](/assets/images/populacoesGET.png)
 
-### 5- Colocar um novo filoho
+### 5- Colocar um novo filho
 
-* **Endpoint:** http://localhost:3000/populacoes/<id do animal da classe Populacoes>/adicionar-filho/
+* **Endpoint:** http://localhost:3000/populacoes/**id do animal da classe Populacoes, depois do GET (número 4)**/adicionar-filho/
 
 * **Método:** POST
 
