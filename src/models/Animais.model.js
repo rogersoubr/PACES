@@ -26,7 +26,7 @@ export class Animais{
 //cria e exporta classe
 //tentar fazer com heranca
 export class Populacoes {
-    constructor(id,nomeA, nome, idade, endereco, filhos){
+    constructor(id,nomeA, nome, idade, endereco, filhos = []){
         this.id = id;
         this.nomeA = nomeA;
         this.nome = nome;//vai receber apelido 
@@ -38,7 +38,10 @@ export class Populacoes {
     // array statico para instanciar a classe
     static populacao = [];
 
-
+    adiconaFilho(filho){
+        this.filhos.push(filho);//coloca no array
+        return `O animal ${this.nome} é pai de ${filho}`
+    }
 
     salvarPopulacaoAnimal(pAnimal){
         Populacoes.populacao.push(pAnimal);

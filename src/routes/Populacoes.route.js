@@ -8,4 +8,6 @@ populacoes.get("/", PopulacoesController.getPopulacoes); ////vai nessa rota como
 
 populacoes.post("/cadastra", PopulacoesController.colocarPopulacoes); //vai nessa rota, onde abre o método POST que leva ao método que cria
 
+populacoes.post("/:id/adicionar-filho", PopulacoesController.adicionarFilho); //método POST que colocar um filho
+
 export default populacoes; //exporta a intancia de router

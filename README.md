@@ -70,7 +70,21 @@ Exemplo de requisição e resposta:
 
 ![Exemplo de entrada e resposta:](/assets/images/populacoesGET.png)
 
-### 5- Buscar Locais e Ações
+### 5- Colocar um novo filoho
+
+* **Endpoint:** http://localhost:3000/populacoes/<id do animal da classe Populacoes>/adicionar-filho/
+
+* **Método:** POST
+
+* **Formato de dados:** JSON
+
+* Vai receber o nomeFilho em método POST, no formato de JSON, para cadastrar um novo filho na base de dados.
+
+Exemplo de requisição e resposta:
+
+![Exemplo de entrada e resposta:](/assets/images/filhosPOST.png)
+
+### 6- Buscar Locais e Ações
 
 * **Endpoint:** http://localhost:3000/locais/
 

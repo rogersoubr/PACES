@@ -33,28 +33,36 @@
     ],
     "populacoes": [
         {
-            "id": "bcd0fe4a-91d2-43d2-ad20-7f89baa06869",
-            "nomeA": "Onça-pintada",
-            "nome": "Jaguá",
+            "id": "pop-001",
+            "nomeA": "onca-pintada",
+            "nome": "Panterão",
             "idade": 12,
-            "endereco": "Reserva do Xingu",
-            "filhos": 3
-        },
-        {
-            "id": "5680d3bd-fac0-4a5e-892c-d18c549201d1",
-            "nomeA": "Tucano-toco",
-            "nome": "Bico-laranja",
-            "idade": 4,
-            "endereco": "Chapada dos Veadeiros",
-            "filhos": 2
-        },
-        {
-            "id": "357ea730-dd87-4a33-919e-a05117859e0f",
-            "nomeA": "Peixe-boi-marinho",
-            "nome": "Marujo",
-            "idade": 20,
-            "endereco": "Parque Nacional Marinho",
-            "filhos": 1
-        }
+            "endereco": "Floresta Amazônica - Setor Leste",
+            "filhos": ["Tigrinho", "Manchinha"]
+          },
+          {
+           "id": "pop-002",
+            "nomeA": "baleia-azul",
+            "nome": "Gigantona",
+            "idade": 30,
+            "endereco": "Oceano Atlântico - Costa Brasileira",
+            "filhos": ["Azulzinho", "Coral", "Gota"]
+          },
+          {
+           "id": "pop-003",
+            "nomeA": "lobo-guará",
+            "nome": "Vermelhão",
+            "idade": 8,
+            "endereco": "Cerrado Mineiro",
+            "filhos": []
+          },
+          {
+           "id": "pop-004",
+            "nomeA": "tamandua-bandeira",
+            "nome": "Lenguinha",
+            "idade": 15,
+            "endereco": "Pantanal Sul",
+            "filhos": ["Formiguinha"]
+          }
     ]
 }
