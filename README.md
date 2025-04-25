@@ -72,7 +72,7 @@ Exemplo de requisição e resposta:
 
 ### 5- Colocar um novo filho
 
-* **Endpoint:** http://localhost:3000/populacoes/**id do animal da classe Populacoes, depois do GET (número 4)**/adicionar-filho/
+* **Endpoint:** http://localhost:3000/populacoes/ **id do animal da classe Populacoes, depois do GET (número 4)** /adicionar-filho/
 
 * **Método:** POST
 
