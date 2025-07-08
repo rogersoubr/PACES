@@ -29,7 +29,7 @@ class AnimaisController{
 
             const novoAnimal = new Animais(uuidv4(),nomeA, classe, familia, ambiente, bioma, exemplares, extincao); //instancia a classe
     
-            novoAnimal.salvarAnimal(novoAnimal);//q maluco
+"            novoAnimal.salvarAnimal(novoAnimal);//q maluco"
 
             res.json({ message: "Animal foi salvo", animal: novoAnimal});
 
