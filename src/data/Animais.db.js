@@ -1,39 +1,85 @@
-import { Animais, Populacoes } from "../models/Animais.model.js";//importando modelo
-import { v4 as uuidv4 } from "uuid";//importando id hexa
-
-
-// BASE DE DADOS ANIMAIS
-
-//é um array com objetos de animais
-const animaisBase = [
-
-  new Animais(uuidv4(), "Tamanduá-bandeira", "Mamíferos", "Myrmecophagidae", "Terrestre", "Cerrado", 2500, false),
-
-  new Animais(uuidv4(), "Peixe-boi", "Mamíferos", "Trichechidae", "Marinho", "Amazônia", 120, true),
-
-  new Animais(uuidv4(), "Lobo-guará", "Mamíferos", "Canidae", "Terrestre", "Cerrado", 1500, false),
-
-  new Animais(uuidv4(), "Onça-pintada", "Mamíferos", "Felidae", "Terrestre", "Pantanal", 3500, false),
-
-  new Animais(uuidv4(), "Ararinha-azul", "Aves", "Psittacidae", "Terrestre", "Caatinga", 80, true),
+export const animaisBD = [
+  {
+    nomeA: "Tamanduá-bandeira",
+    classe: "Mamíferos",
+    familia: "Myrmecophagidae",
+    ambiente: "Terrestre",
+    bioma: "Cerrado",
+    exemplares: 2500,
+    extincao: false
+  },
+  {
+    nomeA: "Peixe-boi",
+    classe: "Mamífero",
+    familia: "Trichechidae",
+    ambiente: "Marinho",
+    bioma: "Amazônia",
+    exemplares: 120,
+    extincao: true,
+  },
+  {
+    nomeA: "Lobo-guará",
+    classe: "Mamífero",
+    familia: "Canidae",
+    ambiente: "Terrestre",
+    bioma: "Cerrado",
+    exemplares: 1500,
+    extincao: false,
+  },
+  {
+    nomeA: "Onça-pintada",
+    classe: "Mamífero",
+    familia: "Felidae",
+    ambiente: "Terrestre",
+    bioma: "Pantanal",
+    exemplares: 3500,
+    extincao: false,
+  },
+  {
+    nomeA: "Ararinha-azul",
+    classe: "Aves",
+    familia: "Psittacidae",
+    ambiente: "Terrestre",
+    bioma: "Caatinga",
+    exemplares: 20,
+    extincao: true,
+  },
 ];
 
-// adiciona a lista estática
-animaisBase.forEach(animal => Animais.animal.push(animal));
-//forEach percorre cada objeto animal desse array animaisBase
-//para cada animal ele faz Animais.animal.push(animal), vulgo, insere o animal dentro do array estatic da classe Animais
-
-
-
-// BASE DE DADOS POPULAÇÕES
-const populacoesBase = [
-  new Populacoes(uuidv4(), "Tamanduá-bandeira", "João", 45, "Zona rural de Minas Gerais", ["Carlos", "Mariana", "Júlia"]),
-  new Populacoes(uuidv4(), "Peixe-boi", "Ana", 33, "Beira do Rio Amazonas", ["Miguel", "Sofia"]),
-  new Populacoes(uuidv4(), "Lobo-guará", "Pedro", 29, "Chapada dos Veadeiros, GO", ["Felipe"]),
-  new Populacoes(uuidv4(), "Onça-pintada", "Marcos", 52, "Pantanal Sul-mato-grossense", ["Rafael", "Laura", "Bruna", "Caio"]),
-  new Populacoes(uuidv4(), "Ararinha-azul", "Luciana", 39, "Interior da Bahia", []),
+export const populacoesBD = [
+  {
+    nomeA: "Tamanduá-bandeira",
+    apelido: "João",
+    idade: 8, 
+    endereco: "Zona rural de Minas Gerais",
+    filhos: ["Carlos", "Mariana", "Júlia"],
+  },
+  {
+    nomeA: "Peixe-boi",
+    apelido: "Ana",
+    idade: 4,
+    endereco: "Beira do Rio Amazonas",
+    filhos: ["Miguel", "Sofia"],
+  },
+  {
+    nomeA: "Lobo-guará",
+    apelido: "Pedro",
+    idade: 9,
+    endereco: "Chapada dos Veadeiros, GO",
+    filhos: ["Felipe"],
+  },
+  {
+    nomeA: "Onça-pintada",
+    apelido: "Marcos",
+    idade: 5,
+    endereco: "Pantanal Sul-mato-grossense",
+    filhos: ["Rafael", "Laura", "Bruna", "Caio"],
+  },
+  {
+    nomeA: "Ararinha-azul",
+    apelido: "Luciana",
+    idade: 12,
+    endereco: "Interior da Bahia",
+    filhos: [],
+  },
 ];
-
-
-// adiciona a lista estática
-populacoesBase.forEach(p => Populacoes.populacao.push(p));

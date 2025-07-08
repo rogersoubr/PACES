@@ -1,12 +1,14 @@
-import {Animais} from "../models/Animais.model.js";
-//import {Locais} from "../models/Locais.model.js";
-import { v4 as uuidv4 } from "uuid";
+import { PrismaClient } from "@prisma/client";
+
+const prisma =  new PrismaClient();
 
 class AnimaisController{
-    getAnimais(req,res){
+    //async ps encosta no bd
+    async getAnimais(req,res){
+        const todosAnimais = await prisma.animais.findMany();
         //console.log("Mostrando todos os animais")
-        res.json({message:"Mostrando todos os animais", 
-            animal: Animais.animal}
+        return res.json({message:"Mostrando todos os animais", 
+            animal: todosAnimais}
         );
     }
 
@@ -14,28 +16,35 @@ class AnimaisController{
         const { nomeA, classe, familia, ambiente, bioma, exemplares, extincao } = req.body;
 
         if ((!nomeA || !classe || !familia || !ambiente || !bioma || !exemplares)){
-            res.json({
+            return res.status(400).json({
                 message:"Está com os dados incorretos"
             });//não estoura erro ainda, só guarda messagem
         }
 
         if (!Number.isInteger(exemplares)) {
-            return res.json({ message: "Exemplares deve ser um número inteiro" });//se exemplares não for number
+            return res.status(400).json({ message: "Exemplares deve ser um número inteiro" });//se exemplares não for number
           }
           //vai tentar
           try{
+            //console.log(nomeA, classe, familia, ambiente, bioma, exemplares, extincao);
 
-            console.log(nomeA, classe, familia, ambiente, bioma, exemplares, extincao);
+            const novoAnimal = await prisma.animais.create({
+                data: { 
+                    nomeA, 
+                    classe, 
+                    familia, 
+                    ambiente, 
+                    bioma, 
+                    exemplares, 
+                    extincao 
+                }
+            });
 
-            const novoAnimal = new Animais(uuidv4(),nomeA, classe, familia, ambiente, bioma, exemplares, extincao); //instancia a classe
-    
-"            novoAnimal.salvarAnimal(novoAnimal);//q maluco"
-
-            res.json({ message: "Animal foi salvo", animal: novoAnimal});
+            return res.status(201).json({ message: "Animal foi salvo", animal: novoAnimal});
 
           }catch(error){
 
-                res.status(400).json({error});//dando errado, estoura o erro e mensagem
+                return res.status(500).json({error});//dando errado, estoura o erro e mensagem
           }
 
     }

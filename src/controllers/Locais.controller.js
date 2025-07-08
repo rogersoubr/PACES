@@ -1,11 +1,12 @@
-//import {Animais} from "../models/Animais.model.js";
-import {Locais} from "../models/Locais.model.js";
+import { PrismaClient } from "@prisma/client";
+
+const prisma =  new PrismaClient();
 
 class LocaisController{
-    getLocais(req,res){
-        //console.log("Mostando todos os locais");
-        res.json({message:"Mostando todos os locais",
-            local: Locais.local}
+    async getLocais(req,res){
+        const todosLocais = await prisma.locais.findMany();
+        return res.json({message:"Mostrando todos os locais", 
+            animal: todosLocais}
         );
     }
 

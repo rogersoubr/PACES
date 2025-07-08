@@ -1,14 +1,27 @@
-import { Locais } from "../models/Locais.model.js";
-import { v4 as uuidv4 } from "uuid";
-
-// dados de exemplo
-const locaisBase = [
-  new Locais(uuidv4(), "Projeto Tamar", "Preservação de tartarugas marinhas", "Praia do Forte, BA"),
-  new Locais(uuidv4(), "Instituto Onça Pintada", "Conservação de felinos brasileiros", "Goiás, GO"),
-  new Locais(uuidv4(), "SOS Mata Atlântica", "Preservação da Mata Atlântica", "São Paulo, SP"),
-  new Locais(uuidv4(), "WWF Brasil", "Conservação da biodiversidade", "Brasília, DF"),
-  new Locais(uuidv4(), "Instituto Arara Azul", "Proteção de aves em extinção", "Campo Grande, MS"),
+export const locaisBD = [
+  {
+    nome: "Projeto Tamar",
+    proposito: "Preservação de tartarugas marinhas",
+    endereco: "Praia do Forte, BA",
+  },
+  {
+    nome: "Instituto Onça Pintada",
+    proposito: "Conservação de felinos brasileiros",
+    endereco: "Goiás, GO",
+  },
+  {
+    nome: "SOS Mata Atlântica",
+    proposito: "Preservação da Mata Atlântica",
+    endereco: "São Paulo, SP",
+  },
+  {
+    nome: "WWF Brasil",
+    proposito: "Conservação da biodiversidade",
+    endereco: "Brasília, DF",
+  },
+  {
+    nome: "Instituto Arara Azul",
+    proposito: "Proteção de aves em extinção",
+    endereco: "Campo Grande, MS",
+  },
 ];
-
-// popular a base estática
-locaisBase.forEach(local => Locais.local.push(local));

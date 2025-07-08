@@ -1,41 +1,48 @@
-import { Animais, Populacoes } from "../models/Animais.model.js";
+import { PrismaClient } from "@prisma/client";
 
-import { v4 as uuidv4 } from "uuid";
+const prisma =  new PrismaClient();
 
 class PopulacoesController {
-    getPopulacoes(req,res){
-        console.log("Mostando o controle de todas as populacões");
-        res.json({
-            populacao: Populacoes.populacao}
+    async getPopulacoes(req,res){
+        const todasPopulacoes = await prisma.populacoes.findMany();
+
+        res.json({message:"Mostrando todas as populacoes", 
+            animal: todasPopulacoes}
         );
     }
 
     async colocarPopulacoes(req, res){
-        const { nomeA, nome, idade, endereco, filhos } = req.body;
+        const { nomeA, apelido, idade, endereco, filhos } = req.body;
 
-        if ((!nomeA || !nome || !idade || !endereco || !filhos)){
-            res.json({
+        if ((!nomeA || !apelido || !idade || !endereco || !filhos)){
+            return res.status(400).json({
                 message:"Está com os dados incorretos"
             });//não estoura erro ainda, só guarda messagem
         }
 
           if (!Number.isInteger(idade)) {
-            res.json({ message: "Idade deve ser um número inteiro" });//se idade não for number
+            return res.status(400).json({ message: "Idade deve ser um número inteiro" });//se idade não for number
           }
           //vai tentar
           try{
 
-            console.log(nomeA, nome, idade, endereco, filhos);
+            console.log(nomeA, apelido, idade, endereco, filhos);
 
-            const novaPopulacao = new Populacoes(uuidv4(),nomeA, nome, idade, endereco, filhos); //instancia a classe
-    
-            novaPopulacao.salvarPopulacaoAnimal(novaPopulacao);//q maluco
+            const novaPopulacao = await prisma.populacoes.create({
+                data: { 
+                    nomeA,
+                    apelido,
+                    idade,
+                    endereco,
+                    filhos 
+                }
+            });
 
-            res.json({ message: "Novo Animal foi salvo", populacao: novaPopulacao});
+            return res.status(201).json({ message: "Nova populacao foi salva", populacao: novaPopulacao});
 
           }catch(error){
 
-                res.status(400).json({error});//dando errado, estoura o erro e mensagem
+                return res.status(400).json({error});//dando errado, estoura o erro e mensagem
           }
 
     }
@@ -50,7 +57,7 @@ class PopulacoesController {
         }
 
         // procura a pai/mae com o id igual
-        const individuo = Populacoes.populacao.find(p => p.id === id);//pegar A11 com Dan
+        const individuo = await prisma.populacoes.findUnique({ where: { id } });
 
         //
         if (!individuo) {
@@ -60,11 +67,16 @@ class PopulacoesController {
         // adiciona o filho usando o método da classe
         //const mensagem = individuo.adiconaFilho(nomeFilho);
 
-        individuo.filhos.push(nomeFilho);
+        const filhosAtualizados = [...individuo.filhos, nomeFilho];
 
-        return res.status(200).json({
+        const populacaoAtualizada = await prisma.populacoes.update({
+            where: { id },
+            data: { filhos: filhosAtualizados }
+        });
+
+        return res.status(201).json({
             mensagem: "Filho adicionado",
-            filhosAtualizados: individuo.filhos
+            filhosAtualizados: populacaoAtualizada.filhos
         });
     }
 }

@@ -4,19 +4,37 @@ Essa API foi criada para fornecer dados para um front end que combate o Especism
 
 ## Configuração
 
+1. **git clone https://github.com/rogersoubr/PACES.git** 
+
 ### Frameworks
  * express
  * nodemon
- * uuid
+ * prisma
+ * cors
+ * dotenv
 
-### Porta
-* 3000
+#### Instalar com: 
+* **npm i** 
+
+### Rodando
+* **npm run devN**
+
+* Caso tenha feito alguma mudança no prisma:
+1. **npm run prisma:generate**
+2. **npm run prisma:migrate**
+3. **npm run prisma:push**
+
+* Caso não tenha nenhum dado no Banco de Dados:
+4. **npm run seed**
 
 ## ⏺ Endpoints
 
+### Porta
+* 3001
+
 ### 1- Colocar controle de uma populacao
 
-* **Endpoint:** http://localhost:3000/populacoes/cadastra
+* **Endpoint:** http://localhost:3001/populacoes/cadastra
 
 * **Método:** POST
 
@@ -30,7 +48,7 @@ Exemplo de requisição, entrada e resposta:
 
 ### 2- Adicionar Animal
 
-* **Endpoint:** http://localhost:3000/animais/cadastra
+* **Endpoint:** http://localhost:3001/animais/cadastra
 
 * **Método:** POST
 
@@ -44,7 +62,7 @@ Exemplo de requisição, entrada e resposta:
 
 ### 3- Buscar Animais
 
-* **Endpoint:** http://localhost:3000/animais/
+* **Endpoint:** http://localhost:3001/animais/
 
 * **Método:** GET
 
@@ -58,7 +76,7 @@ Exemplo de requisição e resposta:
 
 ### 4- Buscar Animais das Populações
 
-* **Endpoint:** http://localhost:3000/populacoes/
+* **Endpoint:** http://localhost:3001/populacoes/
 
 * **Método:** GET
 
@@ -72,7 +90,7 @@ Exemplo de requisição e resposta:
 
 ### 5- Colocar um novo filho
 
-* **Endpoint:** http://localhost:3000/populacoes/ **id do animal da classe Populacoes, depois do GET (número 4)** /adicionar-filho/
+* **Endpoint:** http://localhost:3001/populacoes/ **id do animal de Populacoes, depois do GET (número 4)** /adicionar-filho/
 
 * **Método:** POST
 
@@ -86,7 +104,7 @@ Exemplo de requisição e resposta:
 
 ### 6- Buscar Locais e Ações
 
-* **Endpoint:** http://localhost:3000/locais/
+* **Endpoint:** http://localhost:3001/locais/
 
 * **Método:** GET
 

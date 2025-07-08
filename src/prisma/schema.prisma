@@ -24,7 +24,7 @@ model populacoes{
     id              String              @id @default(cuid())
     nomeA           String              
     apelido         String
-    idade           String
+    idade           Int
     endereco        String
     filhos          String[]            @default([])
 }
