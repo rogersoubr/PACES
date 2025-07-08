@@ -1,0 +1,38 @@
+generator client {
+provider =  "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("BACKEND_URL")
+}
+
+
+model animais {
+    id              String              @id @default(cuid())
+    nomeA           String
+    classe          String
+    familia         String
+    ambiente        String
+    bioma           String
+    exemplares      Int
+    extincao        Boolean
+
+}
+
+model populacoes{
+    id              String              @id @default(cuid())
+    nomeA           String              
+    apelido         String
+    idade           String
+    endereco        String
+    filhos          String[]            @default([])
+}
+// iniciei com uma string de valor vazio 
+
+model locais{
+    id              String              @id @default(cuid())
+    nome            String          
+    proposito       String  
+    endereco        String  
+}

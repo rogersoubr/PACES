@@ -1,17 +1,16 @@
 {
   "name": "miniprojeto_paces",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "dist/index.js",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "devN": "nodemon ./src/server.ts",
     "build": "tsc",
-    "start": "node ./src/server.ts",
+    "start": "node dist/server.js",
     "dev": "ts-node-dev --respawn --transpile-only src/server.ts",
-    "db:generate": "prisma generate",
-    "db:push": "prisma db push",
-    "db:seed": "ts-node prisma/seed.ts"
+    "db:generate": "prisma generate --schema src/prisma/schema.prisma",
+    "db:push": "prisma db push --schema src/prisma/schema.prisma",
+    "db:seed": "ts-node --esm prisma/seeds.ts"
   },
   "keywords": [],
   "author": "",
@@ -23,10 +22,18 @@
     "date-fns": "^4.1.0",
     "dotenv": "^17.1.0",
     "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
     "nodemon": "^3.1.9",
     "prisma": "^6.11.1",
     "sqlite": "^5.1.1",
     "sqlite3": "^5.1.7",
     "uuid": "^11.1.0"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.3",
+    "ts-node": "^10.9.2",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.8.3"
   }
 }
