@@ -11,9 +11,10 @@ const app = express();
 //colocando porta
 const PORT = process.env.BACKEND_PORT || 3000;
 
-// CORS configurado
+
+// CORS configurado => process.env.FRONTEND_URL
 const cors_config = { 
-    origin: process.env.FRONTEND_URL,
+    origin: '*',
     credentials: true,
 };
 

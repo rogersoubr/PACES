@@ -7,11 +7,11 @@ Essa API foi criada para fornecer dados para um front end que combate o Especism
 1. **git clone https://github.com/rogersoubr/PACES.git** 
 
 ### Frameworks
- * express
- * nodemon
- * prisma
- * cors
- * dotenv
+ * express - 5.1.0
+ * nodemon - 3.1.9
+ * prisma - 6.11.1
+ * cors - 2.8.5
+ * dotenv - 17.1.0
 
 #### Instalar com: 
 * **npm i** 
